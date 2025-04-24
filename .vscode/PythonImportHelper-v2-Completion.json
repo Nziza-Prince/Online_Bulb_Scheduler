@@ -1,0 +1,83 @@
+[
+    {
+        "label": "serial",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "serial",
+        "description": "serial",
+        "detail": "serial",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "websockets",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "websockets",
+        "description": "websockets",
+        "detail": "websockets",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "SERIAL_PORT",
+        "kind": 5,
+        "importPath": "backend.mqtt_subscriber",
+        "description": "backend.mqtt_subscriber",
+        "peekOfCode": "SERIAL_PORT = 'COM9'  # Replace with your port\nBAUD_RATE = 9600\ntry:\n    arduino = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)\n    print(\"Connected to Arduino.\")\nexcept Exception as e:\n    print(f\"Serial error: {e}\")\n    exit()\nprint(\"Listening for MQTT messages...\")\n# Run mosquitto_sub and read line-by-line",
+        "detail": "backend.mqtt_subscriber",
+        "documentation": {}
+    },
+    {
+        "label": "BAUD_RATE",
+        "kind": 5,
+        "importPath": "backend.mqtt_subscriber",
+        "description": "backend.mqtt_subscriber",
+        "peekOfCode": "BAUD_RATE = 9600\ntry:\n    arduino = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)\n    print(\"Connected to Arduino.\")\nexcept Exception as e:\n    print(f\"Serial error: {e}\")\n    exit()\nprint(\"Listening for MQTT messages...\")\n# Run mosquitto_sub and read line-by-line\nproc = subprocess.Popen(",
+        "detail": "backend.mqtt_subscriber",
+        "documentation": {}
+    },
+    {
+        "label": "proc",
+        "kind": 5,
+        "importPath": "backend.mqtt_subscriber",
+        "description": "backend.mqtt_subscriber",
+        "peekOfCode": "proc = subprocess.Popen(\n    [\"mosquitto_sub\", \"-h\", \"localhost\", \"-t\", \"iot/light\"],\n    stdout=subprocess.PIPE,\n    text=True\n)\ntry:\n    for line in proc.stdout:\n        msg = line.strip()\n        print(f\"Received MQTT message: {msg}\")\n        if msg == \"ON\":",
+        "detail": "backend.mqtt_subscriber",
+        "documentation": {}
+    },
+    {
+        "label": "start_server",
+        "kind": 5,
+        "importPath": "websocket-server.server",
+        "description": "websocket-server.server",
+        "peekOfCode": "start_server = websockets.serve(handler, \"localhost\", 6789)\nprint(\"WebSocket server listening on ws://localhost:6789\")\nasyncio.get_event_loop().run_until_complete(start_server)\nasyncio.get_event_loop().run_forever()",
+        "detail": "websocket-server.server",
+        "documentation": {}
+    }
+]

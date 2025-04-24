@@ -2,43 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Light Scheduler</title>
+  <title>IoT Light Scheduler</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h2>Schedule Bulb Timing</h2>
-    <label for="onTime">Turn ON Time (HH:MM):</label>
-    <input type="time" id="onTime">
-
-    <label for="offTime">Turn OFF Time (HH:MM):</label>
-    <input type="time" id="offTime">
-
-    <button onclick="publishSchedule()">Set Schedule</button>
+    <h2>Schedule Light</h2>
+    <label>Turn ON Duration (seconds):</label>
+    <input type="number" id="delay" placeholder="e.g. 10">
+    <button onclick="sendSchedule()">Send</button>
   </div>
-
-  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
-  <script>
-    const client = mqtt.connect('ws://157.173.101.159:9001');
-
-    client.on('connect', function () {
-      console.log('Connected to MQTT broker (WebSocket)');
-    });
-
-    function publishSchedule() {
-      const onTime = document.getElementById('onTime').value;
-      const offTime = document.getElementById('offTime').value;
-
-      if (onTime) {
-        client.publish('your/topic/on', onTime);
-        alert('ON time sent: ' + onTime);
-      }
-
-      if (offTime) {
-        client.publish('your/topic/off', offTime);
-        alert('OFF time sent: ' + offTime);
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
