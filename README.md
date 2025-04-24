@@ -22,7 +22,7 @@ This project allows users to schedule ON and OFF times for a bulb via a web inte
 - USB cable
 
 ### Software
-- Python 3.x
+- Python 3.x    
 - Mosquitto MQTT broker (cloud or local)
 - Arduino IDE
 - Modern web browser
