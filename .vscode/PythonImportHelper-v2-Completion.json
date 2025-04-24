@@ -49,7 +49,7 @@
         "kind": 5,
         "importPath": "backend.mqtt_subscriber",
         "description": "backend.mqtt_subscriber",
-        "peekOfCode": "SERIAL_PORT = 'COM9'  # Replace with your port\nBAUD_RATE = 9600\ntry:\n    arduino = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)\n    print(\"Connected to Arduino.\")\nexcept Exception as e:\n    print(f\"Serial error: {e}\")\n    exit()\nprint(\"Listening for MQTT messages...\")\n# Run mosquitto_sub and read line-by-line",
+        "peekOfCode": "SERIAL_PORT = '/dev/ttyACM0'  # Replace with your port\nBAUD_RATE = 9600\ntry:\n    arduino = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)\n    print(\"Connected to Arduino.\")\nexcept Exception as e:\n    print(f\"Serial error: {e}\")\n    exit()\nprint(\"Listening for MQTT messages...\")\n# Run mosquitto_sub and read line-by-line",
         "detail": "backend.mqtt_subscriber",
         "documentation": {}
     },

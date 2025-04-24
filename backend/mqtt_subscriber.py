@@ -1,7 +1,7 @@
 import serial
 import subprocess
 
-SERIAL_PORT = 'COM9'  # Replace with your port
+SERIAL_PORT = '/dev/ttyACM0'  # Replace with your port
 BAUD_RATE = 9600
 
 try:
